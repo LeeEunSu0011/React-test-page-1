@@ -37,7 +37,7 @@ app.get('/api/customers', (req, res )  => {
 app.use('/image',express.static('./upload'));
 
 app.post('/api/customers', upload.single('image'), (req, res) => {
-    let sql = 'insert into customer values (null, ?, ?, ?, ?, ?, 0)';
+    let sql = 'insert into customer values (null, ?, ?, ?, ?, ?, now(), 0)';
     let image = '/image/' + req.file.filename;
     let name = req.body.name;
     let birthday = req.body.birthday;
