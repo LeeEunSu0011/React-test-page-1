@@ -3,9 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MuiThemeProvider, createMuiTheme } from  '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  typography : {
+    fontFamily : '"Noto Serif JP", serif'
+  }
+});
 
 ReactDOM.render(
-    <App />,
+  <MuiThemeProvider>
+    <App />
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
 
